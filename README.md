@@ -27,3 +27,23 @@ The figaro settings is not loaded before puma, so you must setup puma variables
 using the `.env` file. These environment variables are: `WEB_CONCURRENCY` and
 `MAX_THREADS`.
 
+## Get user balance:
+
+```
+curl -X "GET" "http://localhost:3000/users/1" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json"
+```
+
+## Add user credit:
+
+```
+curl -X "POST" "http://localhost:3000/users/1/credits" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d $'{
+  "credit": {
+    "amount": 10
+  }
+}'
+```

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  resources :users, only: [:show, :index] do
+    member do
+      resources :credits, only: :create
+    end
+  end
 end
