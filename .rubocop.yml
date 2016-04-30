@@ -1,0 +1,25 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/schema.rb
+
+Rails:
+  Enabled: true
+
+MethodLength:
+  Max: 20
+
+LineLength:
+  Max: 120
+
+HasAndBelongsToMany:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
